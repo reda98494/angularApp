@@ -26,8 +26,8 @@ export class PostListItemComponent implements OnInit {
 
   color(): string {
     if (this.post.lovesIts < 0 ) return '#ff5252';
-    else if (this.post.lovesIts > 0 ) return '#33d9b2';
-    return '#f7f1e3';
+    else if (this.post.lovesIts > 0 ) return '#26de81';
+    return '#dfe6e9';
   }
 
 }

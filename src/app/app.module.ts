@@ -8,9 +8,11 @@ import localeFr from '@angular/common/locales/fr';
 import { PostListComponent } from './component/post-list/post-list.component';
 import { PostListItemComponent } from './component/post-list-item/post-list-item.component';
 import { HomeComponent } from './component/home/home.component';
-import { BlogComponent } from './component/blog/blog.component';
-import { AppareilViewComponent } from './component/appareil-view/appareil-view.component';
-import { AppareilComponent } from './component/appareil/appareil.component';
+import { AppareilViewModule } from './component/appareil-view/appareil-view.module';
+import { PostListModule } from './component/post-list/post-list.module';
+import { PostListItemModule } from './component/post-list-item/post-list-item.module';
+import { BlogModule } from './component/blog/blog.module';
+
 
 
 registerLocaleData(localeFr);
@@ -18,17 +20,14 @@ registerLocaleData(localeFr);
 @NgModule({
   declarations: [
     AppComponent,
-    PostListComponent,
-    PostListItemComponent,
-    HomeComponent,
-    BlogComponent,
-    AppareilViewComponent,
-    AppareilComponent
+    HomeComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AppareilViewModule,
+    BlogModule
 
   ],
   providers: [

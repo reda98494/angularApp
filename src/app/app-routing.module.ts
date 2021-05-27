@@ -6,8 +6,18 @@ import { HomeComponent } from './component/home/home.component';
 
 const routes: Routes = [
   {path: 'accueil', component: HomeComponent},
-  {path: 'blog', component: BlogComponent},
-  {path: 'appareil', component: AppareilViewComponent},
+  // {path: 'blog', component: BlogComponent},
+  // {path: 'appareil', component: AppareilViewComponent},
+  { 
+    path: 'appareil',
+    loadChildren: () =>import('./component/appareil-view/appareil-view.module')
+    .then(m => m.AppareilViewModule)
+  },
+  { 
+    path: 'blog',
+    loadChildren: () =>import('./component/blog/blog.module')
+    .then(m => m.BlogModule)
+  },
   {path: '', redirectTo: '/accueil', pathMatch: 'full'}
 ];
 
