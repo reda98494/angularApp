@@ -1,0 +1,23 @@
+<ul class="list-group" *ngIf="appareil">
+    <li [ngClass]="{'list-group-item':true,
+                    'list-group-item-success': appareil.status=='allumé',
+                    'list-group-item-danger': appareil.status=='éteint' 
+                    }">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{appareil.name}}</h5>
+            <small>{{appareil.date | date:'short':'+0200':'fr'}}</small>
+        </div>
+        <p class="mb-1">{{getStatus()}}</p>
+        <small>
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group me-2" role="group" aria-label="First group">
+                    <button type="button" class="btn btn-success" (click)="appareil.status='allumé'" >Allumer<i class="fas fa-lightbulb"></i></button>
+                </div>
+                <div class="btn-group me-2" role="group" aria-label="Second group">
+                    <button type="button" class="btn btn-danger" (click)="appareil.status='éteint'" >Eteintdre</button>
+                 </div>
+            </div>
+        </small>
+    </li>
+    <br><br>
+</ul>

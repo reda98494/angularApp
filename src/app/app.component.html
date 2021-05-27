@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nfforav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
@@ -68,4 +68,56 @@
         </div>
     </div>
 
+</div> -->
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid"> -->
+<!-- <a class="navbar-brand" routerLink='accueil' routerLinkActive="active">Accueil</a> -->
+<!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <li routerLinkActive="active" class="list-item"><b><a class="nav-link " routerLink='accueil'>Accueil</a></b></li>
+                <li routerLinkActive="active" class="list-item"><b><a class="nav-link" routerLink="blog">Blog</a></b></li>
+                <li routerLinkActive="active" class="list-item"><b><a class="nav-link" routerLink="appareil">Appareils</a></b></li> -->
+<!-- <a class="nav-link" routerLink="">Pricing</a> -->
+<!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
+<!-- </div>
+        </div>
+    </div>
+</nav> -->
+
+<!--Navbar-->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand h2" routerLinkActive="active" routerLink='accueil'>Accueil</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
+            <ul class="navbar-nav">
+
+                <li class="nav-item h5 mr-3" routerLinkActive="active">
+                    <a class="nav-link" routerLink="blog">
+                        <i class="fa fa-rss" aria-hidden="true"></i> Blog
+                    </a>
+                </li>
+                <li class="nav-item h5 mr-3" routerLinkActive="active">
+                    <a class="nav-link" routerLink="appareil">
+                        <i class="fa fa-desktop" aria-hidden="true"></i> Appareils
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--Navbar-->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
 </div>
