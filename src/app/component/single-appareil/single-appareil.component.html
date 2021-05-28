@@ -1,0 +1,19 @@
+<div class="container py-5">
+    <div class="row">
+        <ul class="list-group">
+            <li [ngClass]="{'list-group-item':true,
+                            'list-group-item-success': status=='allumé',
+                            'list-group-item-danger': status=='éteint' 
+                            }">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{name}}</h5>
+                    <small>{{date | date:'short':'+0200':'fr'}}</small>
+                </div>
+                <p class="mb-1">{{status}}</p>
+
+
+
+            </li>
+        </ul>
+    </div>
+</div>

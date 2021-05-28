@@ -69,5 +69,14 @@ export class AppareilServiceService {
       return appareil
     })
   }
+
+  getAppareilById(id: number){
+    const appareil = this.appareils.find(
+      (s)=>{
+        return s.id === id;
+      }
+    );
+    return appareil;
+  }
   
 }

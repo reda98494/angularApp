@@ -1,24 +1,33 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppareilViewComponent } from './component/appareil-view/appareil-view.component';
-import { BlogComponent } from './component/blog/blog.component';
 import { HomeComponent } from './component/home/home.component';
+import { AuthGuardService } from './service/auth-guard.service';
 
 const routes: Routes = [
-  {path: 'accueil', component: HomeComponent},
+  // {path: 'accueil', component: HomeComponent},
   // {path: 'blog', component: BlogComponent},
   // {path: 'appareil', component: AppareilViewComponent},
   { 
-    path: 'appareil',
+    path: 'authentification',
+    loadChildren: () =>import('./component/auth-component/auth-component.module')
+    .then(m => m.AuthComponentModule)
+  },
+  { 
+    path: 'appareil',canActivate : [AuthGuardService],
     loadChildren: () =>import('./component/appareil-view/appareil-view.module')
     .then(m => m.AppareilViewModule)
   },
   { 
-    path: 'blog',
+    path: 'appareil/:id',canActivate : [AuthGuardService],
+    loadChildren: () =>import('./component/single-appareil/single-appareil.module')
+    .then(m => m.SingleAppareilModule)
+  },
+  { 
+    path: 'blog',canActivate : [AuthGuardService],
     loadChildren: () =>import('./component/blog/blog.module')
     .then(m => m.BlogModule)
   },
-  {path: '', redirectTo: '/accueil', pathMatch: 'full'}
+  {path: '', redirectTo: '/authentification', pathMatch: 'full'}
 ];
 
 @NgModule({
