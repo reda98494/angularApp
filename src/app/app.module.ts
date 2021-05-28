@@ -8,8 +8,8 @@ import { HomeComponent } from './component/home/home.component';
 import { AppareilViewModule } from './component/appareil-view/appareil-view.module';
 import { BlogModule } from './component/blog/blog.module';
 import { AuthComponentModule } from './component/auth-component/auth-component.module';
-import { SingleAppareilComponent } from './component/single-appareil/single-appareil.component';
 import { SingleAppareilModule } from './component/single-appareil/single-appareil.module';
+import { ErrorModule } from './component/error/error.module';
 
 
 
@@ -28,7 +28,8 @@ registerLocaleData(localeFr);
     AppareilViewModule,
     BlogModule,
     AuthComponentModule,
-    SingleAppareilModule
+    SingleAppareilModule,
+    ErrorModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR'},

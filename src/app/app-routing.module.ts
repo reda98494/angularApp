@@ -27,7 +27,13 @@ const routes: Routes = [
     loadChildren: () =>import('./component/blog/blog.module')
     .then(m => m.BlogModule)
   },
-  {path: '', redirectTo: '/authentification', pathMatch: 'full'}
+  { 
+    path: 'error',canActivate : [AuthGuardService],
+    loadChildren: () =>import('./component/error/error.module')
+    .then(m => m.ErrorModule)
+  },
+  {path: '', redirectTo: '/authentification', pathMatch: 'full'},
+  {path: '**', redirectTo: '/error', pathMatch: 'full'}
 ];
 
 @NgModule({
