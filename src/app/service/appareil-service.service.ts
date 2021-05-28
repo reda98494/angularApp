@@ -53,9 +53,12 @@ export class AppareilServiceService {
 
   ];
 
+  /**
+   * Créer un observable pour mieux gérer le changement de data dans le Array appareils déclaré juste en
+   */
   appareilSubject = new Subject<Appareil[]>();
 
-  
+
   constructor() { }
 
 
@@ -71,6 +74,18 @@ export class AppareilServiceService {
       return appareil
     })
   }
+
+  
+   
+  // switchOnAllBis(): void{
+  //   let appareils;
+  //   for(let appareil in this.appareilSubject){
+  //     if(appareil.status=='éteint'){
+  //       appareil.status='allumé'
+  //     }
+  //   }
+  // }
+
   switchOffAll(): void{
     this.appareils = this.appareils.map((appareil)=>{
       if(appareil.status=='allumé'){

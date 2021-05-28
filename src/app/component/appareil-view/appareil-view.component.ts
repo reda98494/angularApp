@@ -38,6 +38,7 @@ export class AppareilViewComponent implements OnInit {
   }
   switchOnAll(): void{
     this._AppareilService.switchOnAll();
+    console.log(this._AppareilService.appareilSubject)
   }
 
   ngOnDestroy(){
