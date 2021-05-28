@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Appareil } from 'src/app/model/interface/appareil';
 
 /**
@@ -13,12 +14,20 @@ import {AppareilServiceService} from '../../service/appareil-service.service'
 })
 export class AppareilViewComponent implements OnInit {
   appareils: Appareil[] = [];
+  appareilsSubscription : Subscription = new Subscription;
 
   constructor(private _AppareilService: AppareilServiceService) { }
 
    
   ngOnInit(): void {
-    this.appareils = this._AppareilService.appareils
+    // this.appareils = this._AppareilService.appareils
+    this.appareilsSubscription = this._AppareilService.appareilSubject.subscribe(
+      (appareils : Appareil[])=>{
+        this.appareils = appareils;
+      }
+    )
+    this._AppareilService.enitAppreilSubject();
+
   }
 
   switchOffAll(): void{
@@ -29,6 +38,10 @@ export class AppareilViewComponent implements OnInit {
   }
   switchOnAll(): void{
     this._AppareilService.switchOnAll();
+  }
+
+  ngOnDestroy(){
+    this.appareilsSubscription.unsubscribe();
   }
 
 }

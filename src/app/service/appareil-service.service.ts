@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Appareil } from '../model/interface/appareil';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppareilServiceService {
-  appareils : Appareil[]= [
+  private appareils : Appareil[]= [
     {
       id: 1,
       name: 'Machien à laver',
@@ -50,8 +51,17 @@ export class AppareilServiceService {
 
     }
 
-  ]
+  ];
+
+  appareilSubject = new Subject<Appareil[]>();
+
+  
   constructor() { }
+
+
+  enitAppreilSubject(){
+    this.appareilSubject.next(this.appareils.slice());
+  }
 
   switchOnAll(): void{
     this.appareils = this.appareils.map((appareil)=>{
